@@ -1,4 +1,4 @@
-import { ExperienceBar, Profile } from '../components'
+import { CompletedChallenges, ExperienceBar, Profile } from '../components'
 import styles from '../styles/Home.module.scss'
 
 export default function Home() {
@@ -9,6 +9,7 @@ export default function Home() {
       <section>
         <div>
           <Profile></Profile>
+          <CompletedChallenges></CompletedChallenges>
         </div>
         <div>
 
