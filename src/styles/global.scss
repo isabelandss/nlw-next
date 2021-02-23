@@ -56,35 +56,3 @@ a {
   display: flex;
   flex-direction: column;
 }
-
-// experience-bar component
-
-.exp-bar {
-  display: flex;
-  align-items: center;
-
-  span {
-    font-size: 1rem;
-  }
-
-  &__bar {
-    flex: 1;
-    height: 4px;
-    border-radius: 4px;
-    background-color: var(--gray-line);
-    margin: 0 1.5rem;
-    position: relative;
-
-    &__progress {
-      height: 4px;
-      border-radius: 4px;
-      background: var(--green);
-    }
-
-    &__current {
-      position: absolute;
-      top: 12px;
-      transform: translateX(-50%);
-    }
-  }
-}
