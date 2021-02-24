@@ -1,4 +1,4 @@
-import { CompletedChallenges, ExperienceBar, Profile, Countdown } from '../components'
+import { CompletedChallenges, ExperienceBar, Profile, Countdown, ChallengeBox } from '../components'
 import styles from '../styles/Home.module.scss'
 
 import Head from 'next/head'
@@ -18,7 +18,7 @@ export default function Home() {
           <Countdown />
         </div>
         <div>
-
+          <ChallengeBox />
         </div>
       </section>
     </div>
