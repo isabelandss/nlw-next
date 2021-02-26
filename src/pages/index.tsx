@@ -2,6 +2,7 @@ import { CompletedChallenges, ExperienceBar, Profile, Countdown, ChallengeBox } 
 import styles from '../styles/Home.module.scss'
 
 import Head from 'next/head'
+import { CountdownProvider } from '../contexts'
 
 export default function Home() {
   return (
@@ -11,16 +12,18 @@ export default function Home() {
       </Head>
       <ExperienceBar />
 
-      <section>
-        <div>
-          <Profile />
-          <CompletedChallenges />
-          <Countdown />
-        </div>
-        <div>
-          <ChallengeBox />
-        </div>
-      </section>
+      <CountdownProvider>
+        <section>
+          <div>
+            <Profile />
+            <CompletedChallenges />
+            <Countdown />
+          </div>
+          <div>
+            <ChallengeBox />
+          </div>
+        </section>
+      </CountdownProvider>
     </div>
   )
 }
