@@ -1,13 +1,15 @@
 import { createContext, useEffect, useState } from 'react'
 import challenges from '../../challenges.json'
+import Cookies from 'js-cookie'
+
 import { ChallengesContextData, ChallengesProviderProps } from '../interfaces'
 
 export const ChallengesContext = createContext({} as ChallengesContextData)
 
-export const ChallengesProvider = ({ children }: ChallengesProviderProps) => {
-  const [level, setLevel] = useState(1)
-  const [currentExperience, setCurrentExperience] = useState(0)
-  const [challengesCompleted, setChallengesCompleted] = useState(0)
+export const ChallengesProvider = ({ children, ...props }: ChallengesProviderProps) => {
+  const [level, setLevel] = useState(props.level ?? 1)
+  const [currentExperience, setCurrentExperience] = useState(props.currentExperience ?? 0)
+  const [challengesCompleted, setChallengesCompleted] = useState(props.challengesCompleted ?? 0)
   const [activeChallenge, setActiveChallenge] = useState(null)
 
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
@@ -15,6 +17,12 @@ export const ChallengesProvider = ({ children }: ChallengesProviderProps) => {
   useEffect(() => {
     Notification.requestPermission()
   }, [])
+
+  useEffect(() => {
+    Cookies.set('level', `${level}`)
+    Cookies.set('currentExperience', `${currentExperience}`)
+    Cookies.set('challengesCompleted', `${challengesCompleted}`)
+  }, [level, currentExperience, challengesCompleted])
 
   const levelUp = () => {
     setLevel(level + 1)

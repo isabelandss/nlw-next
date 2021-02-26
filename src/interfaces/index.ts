@@ -20,6 +20,9 @@ export interface ChallengesContextData {
 
 export interface ChallengesProviderProps {
   children: ReactNode
+  level: number
+  currentExperience: number
+  challengesCompleted: number
 }
 export interface CountdownContextData {
   minutes: number
@@ -32,5 +35,11 @@ export interface CountdownContextData {
 
 export interface CountdownProviderProps {
   children: ReactNode
+}
+
+export interface HomeProps {
+  level: number
+  currentExperience: number
+  challengesCompleted: number
 }
 
