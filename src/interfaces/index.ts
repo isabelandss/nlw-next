@@ -16,6 +16,7 @@ export interface ChallengesContextData {
   startNewChallenge: () => void
   resetChallenge: () => void
   completeChallenge: () => void
+  closeLevelModal: () => void
 }
 
 export interface ChallengesProviderProps {
